@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏦 Bank Management System</h1>
+        <p>Customer Account Management Dashboard</p>
+    </header>
+
+    <div class="container">
+
+        <!-- DASHBOARD STATISTICS -->
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Accounts</h3>
+                <h2 id="totalAccounts">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Sample Balance</h3>
+                <h2 id="totalBalance">₹0</h2>
+            </div>
+
+        </section>
+
+        <!-- ACCOUNT FORM -->
+        <section class="form-section">
+
+            <h2 id="formTitle">Create Bank Account</h2>
+
+            <form id="accountForm">
+
+                <input type="text" id="accountNumber"
+                    placeholder="Account Number" required>
+
+                <input type="text" id="customerName"
+                    placeholder="Customer Name" required>
+
+                <input type="email" id="email"
+                    placeholder="Email Address" required>
+
+                <input type="tel" id="phone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{10}" required>
+
+                <select id="accountType" required>
+                    <option value="">Select Account Type</option>
+                    <option value="Savings">Savings</option>
+                    <option value="Current">Current</option>
+                </select>
+
+                <input type="number" id="balance"
+                    placeholder="Sample Account Balance"
+                    min="0" step="0.01" required>
+
+                <button type="submit" id="submitBtn">
+                    Add Account
+                </button>
+
+                <button type="button" id="cancelBtn"
+                    class="cancel" hidden>
+                    Cancel
+                </button>
+
+            </form>
+        </section>
+
+        <!-- CUSTOMER TABLE -->
+        <section class="table-section">
+
+            <h2>Customer Account Details</h2>
+
+            <input type="text" id="search"
+                placeholder="Search by customer name or account number">
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Account Type</th>
+                            <th>Balance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="accountTable"></tbody>
+
+                </table>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Bank Management System | AI-Based Software Lab Experiment 5</p>
+    </footer>
+    <script src="script.js" defer></script>
+
+</body>
+</html>
